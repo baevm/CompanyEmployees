@@ -12,7 +12,7 @@ public class RepositoryContextFactory : IDesignTimeDbContextFactory<RepositoryCo
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")
             .Build();
-
+        
         var builder = new DbContextOptionsBuilder<RepositoryContext>()
             .UseNpgsql(config.GetConnectionString("dbConnection"),
                 b => b.MigrationsAssembly("CompanyEmployees"));

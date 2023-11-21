@@ -44,6 +44,6 @@ public static class ServiceExtensions
     public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration config)
     {
         services.AddDbContext<RepositoryContext>(
-            opts => opts.UseNpgsql(config.GetConnectionString("dbConection")));
+            opts => opts.UseNpgsql(config.GetConnectionString("dbConnection")));
     }
 }
