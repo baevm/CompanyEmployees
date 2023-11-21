@@ -1,0 +1,14 @@
+﻿services:
+  company-employee-db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: CompanyEmployee
+#  companyemployees:
+#    image: companyemployees
+#    build:
+#      context: .
+#      dockerfile: CompanyEmployees/Dockerfile
