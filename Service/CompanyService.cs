@@ -20,17 +20,9 @@ internal sealed class CompanyService : ICompanyService
 
     public IEnumerable<CompanyDto> GetAllCompanies(bool trackChanges)
     {
-        try
-        {
-            var companies = _repository.Company.GetAllCompanies(trackChanges);
-            var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
+        var companies = _repository.Company.GetAllCompanies(trackChanges);
+        var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
             
-            return companiesDto;
-        }
-        catch (Exception e)
-        {
-            _logger.LogError($"Error in {nameof(GetAllCompanies)} service method: {e}");
-            throw;
-        }
+        return companiesDto;
     }
 }
